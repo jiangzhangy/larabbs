@@ -32,7 +32,7 @@
             <a href="" class="dropdown-item">编辑资料</a>
             <div class="dropdown-divider"></div>
             <a href="" class="dropdown-item" id="logout" >
-              <form action="{{ route('logout') }}">
+              <form action="{{ route('logout') }}" method="POST">
                 {{ csrf_field() }}
                 <button class="btn btn-block btn-danger" type="submit" name="button">退出</button>
               </form>
