@@ -11,6 +11,8 @@
 
   <title>@yield('title', 'Larabbs') - 医美论坛</title>
 
+  <meta name="description" content="@yield('description', '医美爱好者社区')" />
+
   <!-- Style -->
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
