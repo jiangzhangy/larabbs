@@ -6,7 +6,11 @@ class ReplyRequest extends Request
 {
     public function rules()
     {
-        switch($this->method())
+        return [
+            'content'   =>  'required|min:2',
+        ];
+
+        /*switch($this->method())
         {
             // CREATE
             case 'POST':
@@ -29,7 +33,7 @@ class ReplyRequest extends Request
             {
                 return [];
             };
-        }
+        }*/
     }
 
     public function messages()
