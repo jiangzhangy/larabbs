@@ -30,24 +30,31 @@
               <i class="fa fa-plus"></i>
             </a>
           </li>
-        <li class="nav-item dropdown">
-          <a href="" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img src="{{ Auth::user()->avatar }}" alt="{{ Auth::user()->name }}" class="img-responsive img-circle" width="30px" height="30px">
-            {{ Auth::user()->name }}
-          </a>
 
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a href="{{ route('users.show', Auth::id()) }}" class="dropdown-item"><i class="far fa-user mr-2"></i>个人中心</a>
-            <a href="{{ route('users.edit', Auth::id()) }}" class="dropdown-item"><i class="far fa-edit mr-2"></i>编辑资料</a>
-            <div class="dropdown-divider"></div>
-            <a href="" class="dropdown-item" id="logout" >
-              <form action="{{ route('logout') }}" method="POST" onsubmit="return confirm('您确定要退出吗？');">
-                {{ csrf_field() }}
-                <button class="btn btn-block btn-danger" type="submit" name="button">退出</button>
-              </form>
+          <li class="nav-item notification-badge">
+            <a class="nav-link mr-3 badge badge-pill badge-{{ Auth::user()->notification_count > 0 ? 'hint' : 'secondary' }} text-white" href="{{ route('notifications.index') }}">
+              {{ Auth::user()->notification_count }}
             </a>
-          </div>
-        </li>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a href="" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="{{ Auth::user()->avatar }}" alt="{{ Auth::user()->name }}" class="img-responsive img-circle" width="30px" height="30px">
+              {{ Auth::user()->name }}
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="{{ route('users.show', Auth::id()) }}" class="dropdown-item"><i class="far fa-user mr-2"></i>个人中心</a>
+              <a href="{{ route('users.edit', Auth::id()) }}" class="dropdown-item"><i class="far fa-edit mr-2"></i>编辑资料</a>
+              <div class="dropdown-divider"></div>
+              <a href="" class="dropdown-item" id="logout" >
+                <form action="{{ route('logout') }}" method="POST" onsubmit="return confirm('您确定要退出吗？');">
+                  {{ csrf_field() }}
+                  <button class="btn btn-block btn-danger" type="submit" name="button">退出</button>
+                </form>
+              </a>
+            </div>
+          </li>
         @endguest
       </ul>
     </div>
