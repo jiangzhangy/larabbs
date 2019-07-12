@@ -3,6 +3,6 @@
     <p class="float-left">
       由 <a href="https://weibo.com/u/5884011996?is_all=1" target="_blank">Join_jiang</a>设计和编码 <span style="color: #e27575;font-size: 14px;">❤</span>
     </p>
-    <p class="float-right"><a href="mailto:649768017@qq.com">联系我们</a></p>
+    <p class="float-right"><a href="mailto:{{ setting('contact_email') }}">联系我们</a></p>
   </div>
 </footer>

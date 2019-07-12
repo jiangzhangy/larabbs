@@ -9,9 +9,10 @@
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>@yield('title', 'Larabbs') - 医美论坛</title>
+  <title>@yield('title', '医美论坛') - {{ setting('site_name', '医美论坛') }}</title>
 
-  <meta name="description" content="@yield('description', '医美爱好者社区')" />
+  <meta name="description" content="@yield('description', setting('seo_description', '医美爱好者社区。'))" />
+  <meta name="keyword" content="@yield('keyword', setting('seo_keyword', '社区,论坛,医美论坛'))" />
 
   <!-- Style -->
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
