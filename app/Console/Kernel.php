@@ -28,6 +28,9 @@ class Kernel extends ConsoleKernel
         //          ->hourly();
         //一小时执行一次 活跃用户 数据生成命令
         $schedule->command('ym:calculate-active-user')->hourly();
+
+        //每日零时 执行一次
+        $schedule->command('ym:sync-user-actived-at')->dailyAt('00:00');
     }
 
     /**
